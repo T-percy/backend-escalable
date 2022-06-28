@@ -1,1 +1,2 @@
-# BUENAS PRACTICAS EN ESTRUCTURA BASICA Y ALTAMENTE ESCALABLE DE UN BACKEND
+# Backend escalable 
+Buenas prácticas en estructura básica y escalable de un backend
