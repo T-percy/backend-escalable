@@ -3,6 +3,7 @@ Buenas practicas de una estructura básica y escalable de un backend
 
 ## Tabla de contenido
 - [Preparando ENTORNO con BUENAS PRACTICAS](#preparando-entorno-con-buenas-prácticas)
+- [Creando SERVIDOR del proyecto con EXPRESS](#creando-servidor-del-proyecto-con-express)
 
 
 ## Preparando entorno con buenas prácticas
@@ -95,4 +96,42 @@ touch .gitignore .editorconfig .eslintrc.json .prettierrc.json
     ```bash
     git push
     ```
+
+## Creando servidor del proyecto con express
+
+1. Instalar express y/o todas las dependencias requeridas para el proyecto como por ej:
+    ```bash
+    npm i express mysql validator dotenv cors morgan body-parser bcrypt-nodejs connect-multiparty just-simple moment mongoose mongoose-paginate-v2
+    ```
+
+    * ### Proposito de las dependencias relacionadas
+    `express` Para crear el servidor.
+    `mysql` 
+    `mongoose` Para manejar base de datos en mongoDB.
+    `mongoose-paginate-v2` Para listar y paginar la información.
+    `validator` Para validar datos, emails, strings, números...
+    `dotenv` Para configurar las variables de entorno.
+    `cors` Para permitir las conexiones de los clientes a nuestro backend.
+    `morgan` Para ver las peticiones que está recibiendo nuestro servidor en tiempo real.
+    `body-parser` Para traducir todo lo que nos manda cliente al formato JSON.
+    `bcrypt-nodejs` Para las contraseñas.
+    `connect-multiparty` Para subir archivos al backend.
+    `just-simple` (autenticación) Para generar token al usuario que irá con la petición, el backend comprobará que sea el correcto para dar el permiso.
+    `moment` Para procesar fechas.
+
+2. Para que el código haga el formateo automatico cada vez que un desarrollador haga commit en el local y push para subirlo al repositorio se debe instalar el siguiente hook:
+```bash
+npx mrm lint-staged
+```
+
+3. Desde el archivo principal del servidor importar el modulo express `const express = require('express');` y todas las librerias necesarias.
+
+4. Crear el objeto de la aplicación y guardarle la funcion express `const app = express();`.
+
+5. Definir los middlewares de la app, por ej: `app.get('/', (req, res) => { res.send(200)});`.
+
+6. Llamar al puerto por dónde escuchará el servidor:
+    * Crear la variable del puerto `const port = process.env.PORT || 3000;`.
+    * Poner a escuchar al servidor `app.listen(port, () => {});`.
+
 --------------------
