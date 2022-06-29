@@ -93,6 +93,6 @@ touch .gitignore .editorconfig .eslintrc.json .prettierrc.json
 
     Desde el segundo push en adelante con el siguiente comando es suficiente:
     ```bash
-    git push -u origin main
+    git push
     ```
 --------------------
