@@ -1,5 +1,5 @@
 {
-  "name": "server-structure-good-practices",
+  "name": "scalable-backend",
   "version": "1.0.0",
   "description": "Estructura básica de un servidor para microservicios altamente escalable",
   "main": "server.js",
